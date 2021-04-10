@@ -18,13 +18,13 @@ cd $HADOOP_HOME/etc/hadoop
 	<!-- 指定 hadoop 数据的存储目录 -->
 	<property>
 		<name>hadoop.tmp.dir</name>
-		<value>/opt/module/hadoop-3.1.3/data</value>
+		<value>/opt/hadoop-3.1.4/data</value>
 	</property>
 	<!-- 配置 HDFS 网页登录使用的静态用户为 aowei -->
 	<property>
 		<name>hadoop.http.staticuser.user</name>
 		<value>aowei</value>
-	<property>
+	</property>
 </configuration>
 ```
 
@@ -78,6 +78,18 @@ cd $HADOOP_HOME/etc/hadoop
 		<name>mapreduce.framework.name</name>
 		<value>yarn</value>
 	</property>
+	<property>
+    <name>yarn.app.mapreduce.am.env</name>
+    <value>HADOOP_MAPRED_HOME=/opt/hadoop-3.1.4</value>
+</property>
+<property>
+    <name>mapreduce.map.env</name>
+    <value>HADOOP_MAPRED_HOME=/opt/hadoop-3.1.4</value>
+</property>
+<property>
+    <name>mapreduce.reduce.env</name>
+    <value>HADOOP_MAPRED_HOME=/opt/hadoop-3.1.4</value>
+</property>
 </configuration>
 ```
 
